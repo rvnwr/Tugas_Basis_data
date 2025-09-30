@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Web Pribadi - Basis Data</title>
+  <title>Halaman - Basis Data</title>
   <link rel="stylesheet" href="">
   <style>
     /* Smooth Scroll */
@@ -229,27 +229,72 @@ footer {
 
   <div class="cards-row">
     <div class="card">
-      <h3>1) Harapan dari MK Basis Data</h3>
-      <p>Memahami konsep dasar basis data, mampu merancang serta mengelola database, menguasai SQL, 
-         dan bisa menerapkan database dalam aplikasi nyata.</p>
+      <h3>1) Harapan dari Mata Kuliah Basis Data</h3>
+    <p>
+      Dari mata kuliah ini, saya berharap tidak hanya memahami teori, tetapi juga:
+    </p>
+    <ul>
+      <li>Mampu <strong>merancang database</strong> dari nol sesuai kebutuhan aplikasi.</li>
+      <li>Bisa menggunakan <strong>SQL</strong> dengan percaya diri untuk query data.</li>
+      <li>Memahami bagaimana <em>keamanan</em> dan <em>integritas data</em> dijaga.</li>
+      <li>Menghubungkan konsep database dengan dunia nyata, misalnya sistem informasi kampus.</li>
+    </ul>
+    <blockquote style="border-left:4px solid #4facfe; padding-left:15px; color:#555; margin-top:15px;">
+      “Belajar database bukan sekadar menghafal SQL, tapi memahami bagaimana data menjadi aset yang berharga.”
+    </blockquote>
     </div>
 
     <div class="card">
-      <h3>2) Apa itu Basis Data?</h3>
-      <p>Kumpulan data yang terorganisir, saling berhubungan, dan disimpan secara sistematis
-         sehingga mudah diakses dan dikelola. Contoh: data perpustakaan.</p>
+      <h3>2) Apa itu Basis Data</h3>
+    <p>
+      <strong>Basis data</strong> adalah tempat penyimpanan informasi yang terstruktur, 
+      sehingga bisa diakses, diubah, dan dianalisis dengan cepat.  
+      Sehari-hari kita berinteraksi dengan basis data tanpa sadar, misalnya:
+    </p>
+    <ul>
+      <li>Aplikasi e-commerce yang menyimpan data produk & transaksi.</li>
+      <li>Media sosial yang menyimpan postingan, komentar, dan like.</li>
+      <li>Sistem akademik yang menyimpan data mahasiswa, mata kuliah, dan nilai.</li>
+    </ul>
     </div>
 
     <div class="card">
-      <h3>3) Apa itu Conceptual DB?</h3>
-      <p>Model konseptual adalah gambaran abstrak struktur data (misalnya ERD) yang menekankan pada entitas,
-         atribut, dan hubungan antar data.</p>
+      <h3>3) Apa itu Conceptual Database</h3>
+    <p>
+      <em>Conceptual Database</em> adalah tahap awal dalam perancangan database, 
+      yang fokus pada <strong>gambaran umum</strong> tanpa detail teknis.
+    </p>
+    <p>
+      Biasanya divisualisasikan dengan <strong>Entity-Relationship Diagram (ERD)</strong> 
+      yang menunjukkan:
+    </p>
+    <ul>
+      <li><strong>Entitas</strong> (contoh: Mahasiswa, Dosen, Mata Kuliah).</li>
+      <li><strong>Atribut</strong> (contoh: Nama, NIM, Alamat).</li>
+      <li><strong>Relasi</strong> antar entitas (contoh: Mahasiswa mengambil Mata Kuliah).</li>
+    </ul>
     </div>
 
     <div class="card">
-      <h3>4) Apa itu Physical Model?</h3>
-      <p>Model fisik adalah implementasi nyata dalam DBMS, berisi detail teknis seperti tabel, tipe data,
-         indeks, dan cara penyimpanan data.</p>
+      <h3>4) Apa itu Physical Model</h3>
+    <p>
+      <em>Physical Model</em> adalah implementasi nyata dalam sistem DBMS, 
+      di mana desain konseptual diwujudkan menjadi tabel, kolom, dan tipe data.
+    </p>
+    <p>
+      Contoh sederhana dalam SQL:
+    </p>
+    <pre style="background:#f4f4f4; padding:10px; border-radius:8px; overflow-x:auto;">
+CREATE TABLE Mahasiswa (
+    NIM VARCHAR(10) PRIMARY KEY,
+    Nama VARCHAR(50),
+    Prodi VARCHAR(30),
+    Angkatan INT
+);
+    </pre>
+    <p>
+      Pada tahap ini juga dipikirkan performa, keamanan, serta strategi backup data.
+    </p>
     </div>
   </div>
  <!-- Card Website Kampus -->
