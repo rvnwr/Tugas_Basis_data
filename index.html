@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Pribadi - Basis Data</title>
+  <link rel="stylesheet" href="">
+  <style>
+    /* Smooth Scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+    /* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #f9f9f9, #e6f0ff);
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: #002B35;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+}
+
+.logo {
+  color: white;
+  font-weight: bold;
+}
+
+.nav-container ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-container ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.nav-container ul li a:hover {
+  color: #ffeb3b;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* Konten ke tengah vertikal */
+  align-items: center;      /* Konten ke tengah horizontal */
+  min-height: 100vh;        /* Tinggi penuh layar */
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  color: white;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  margin-bottom: 25px;
+  font-size: 1.2rem;
+}
+
+/* Button */
+.btn {
+  background: white;
+  color: #4facfe;
+  padding: 12px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #333;
+  color: white;
+}
+
+/* Container untuk card horizontal */
+.container {
+  max-width: 100%;
+  margin: 50px auto;
+  padding: 20px;
+  overflow-x: auto;          /* scroll horizontal bila kepanjangan */
+}
+
+.container h2 {
+  text-align: center;
+  margin-top: -30px; /* naikkan teks tanpa ubah ukuran container */
+  margin-bottom: 50px;
+  color: #4facfe;
+  font-size: 2.5rem;   /* tambah ukuran font */
+  font-weight: bold;  /* biar lebih tegas */
+}
+
+/* Flex untuk kartu sejajar */
+.cards-row {
+  display: flex;
+  gap: 20px;
+}
+
+/* Card style */
+.card {
+  background: white;
+  flex: 0 0 450px;           /* lebar fix 250px */
+  min-height: 400px;         /* tinggi lebih panjang */
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px); /* animasi naik sedikit saat hover */
+}
+
+/* Card kampus - panjang ke samping */
+.card-campus {
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  margin: 40px auto;
+  max-width: 900px;   /* atur panjang card */
+  transition: transform 0.3s ease;
+}
+
+.card-campus:hover {
+  transform: translateY(-6px);
+}
+
+/* Konten teks */
+.campus-content {
+  max-width: 70%;
+}
+
+.card-campus h3 {
+  color: #4facfe;
+  margin-bottom: 5px;
+}
+
+.card-campus p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* Tombol kampus */
+.btn-campus {
+  background: #4facfe;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+  white-space: nowrap; /* biar tombol gak pecah ke bawah */
+}
+
+.btn-campus:hover {
+  background: #333;
+  color: white;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #002B35;
+  color: white;
+  margin-top: 30px;
+}
+  </style>
+</head>
+<body>
+  <!-- Navbar Sticky -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <h2 class="logo">MyWeb</h2>
+      <ul>
+        <li><a href="#home">Beranda</a></li>
+        <li><a href="#tugas">Tugas</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header id="home" class="hero">
+    <h1>Halo, Saya Rivan Wahyu - 1088 👋</h1>
+    <h2>Saya Mahasiswa Semester 3 di UBP Karawang</h2><br>
+    <p>Selamat datang di web pribadi saya.<br>
+       Di sini saya berbagi tugas pertama mata kuliah <b>Basis Data</b>.
+    </p>
+    <a href="#tugas" class="btn">Lihat Tugas</a>
+  </header>
+
+  <!-- Section Tugas -->
+<main id="tugas" class="container">
+  <h2>Tugas Pertama - Mata Kuliah Basis Data</h2>
+
+  <div class="cards-row">
+    <div class="card">
+      <h3>1) Harapan dari MK Basis Data</h3>
+      <p>Memahami konsep dasar basis data, mampu merancang serta mengelola database, menguasai SQL, 
+         dan bisa menerapkan database dalam aplikasi nyata.</p>
+    </div>
+
+    <div class="card">
+      <h3>2) Apa itu Basis Data?</h3>
+      <p>Kumpulan data yang terorganisir, saling berhubungan, dan disimpan secara sistematis
+         sehingga mudah diakses dan dikelola. Contoh: data perpustakaan.</p>
+    </div>
+
+    <div class="card">
+      <h3>3) Apa itu Conceptual DB?</h3>
+      <p>Model konseptual adalah gambaran abstrak struktur data (misalnya ERD) yang menekankan pada entitas,
+         atribut, dan hubungan antar data.</p>
+    </div>
+
+    <div class="card">
+      <h3>4) Apa itu Physical Model?</h3>
+      <p>Model fisik adalah implementasi nyata dalam DBMS, berisi detail teknis seperti tabel, tipe data,
+         indeks, dan cara penyimpanan data.</p>
+    </div>
+  </div>
+ <!-- Card Website Kampus -->
+    <div class="card-campus">
+    <div class="campus-content">
+        <h3>Website Kampus</h3>
+        <p>Kunjungi website resmi kampus saya untuk informasi lebih lanjut.</p>
+    </div>
+    <a href="https://www.ubpkarawang.ac.id" target="_blank" class="btn-campus">Buka Website</a>
+    </div>
+</main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 | Dibuat dengan semangat belajar</p>
+  </footer>
+</body>
+</html>
