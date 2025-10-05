@@ -21,7 +21,12 @@
 body {
   background: linear-gradient(135deg, #f9f9f9, #e6f0ff);
   color: #333;
+  margin: 0;
   line-height: 1.6;
+}
+
+main {
+  flex: 1; /* main mengisi sisa ruang */
 }
 
 /* Navbar */
@@ -105,8 +110,8 @@ body {
 
 /* Container untuk card horizontal */
 .container {
-  max-width: 100%;
-  margin: 50px auto;
+  max-width: 120%;
+  margin: 150px auto;
   padding: 20px;
   overflow-x: auto;          /* scroll horizontal bila kepanjangan */
 }
@@ -124,6 +129,10 @@ body {
 .cards-row {
   display: flex;
   gap: 20px;
+}
+
+#tugas {
+  scroll-margin-top: 80px; /* menyesuaikan tinggi navbar */
 }
 
 /* Card style */
@@ -191,13 +200,95 @@ body {
   color: white;
 }
 
+/* Section dbms */
+.dbms {
+  background: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.dbms h2 {
+  color: #e63946;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.dbms p {
+  max-width: 700px;
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+
+/* Section Tugas 2 */
+.tugas2-post {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.tugas2-post h2 {
+  color: #e63946;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.tugas2-post p {
+  max-width: 700px;
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.tugas2-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1000px;
+}
+
+.tugas2-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.tugas2-card:hover {
+  transform: translateY(-8px);
+}
+
+.tugas2-card h3 {
+  color: #e63946;
+  margin-bottom: 10px;
+}
+
+.tugas2-card img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
 /* Footer */
 footer {
   text-align: center;
   padding: 15px;
   background: #002B35;
   color: white;
-  margin-top: 30px;
 }
   </style>
 </head>
@@ -209,6 +300,8 @@ footer {
       <ul>
         <li><a href="#home">Beranda</a></li>
         <li><a href="#tugas">Tugas</a></li>
+        <li><a href="#dbms">Install Database</a></li>
+        <li><a href="#tugas2">ERD</a></li>
       </ul>
     </div>
   </nav>
@@ -306,6 +399,46 @@ CREATE TABLE Mahasiswa (
     <a href="https://www.ubpkarawang.ac.id" target="_blank" class="btn-campus">Buka Website</a>
     </div>
 </main>
+
+<section id="dbms" class="dbms">
+  <h2>Tata Cara Installasi DBMS (Mysql)</h2>
+   <p>
+    Pada bagian ini, kita akan belajar cara menginstal <strong>MySQL</strong>, salah satu sistem manajemen basis data (DBMS) populer. 
+    MySQL digunakan untuk menyimpan, mengelola, dan mengambil data dari aplikasi, mulai dari website hingga sistem informasi kampus.
+    Video di bawah ini menunjukkan langkah-langkah instalasi MySQL secara lengkap, mulai dari download, konfigurasi, hingga testing.
+  </p>
+
+  <div style="max-width:800px; width:100%; aspect-ratio:16/9;">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/kZlvcejgVv0?si=6TtHXZg5JMbEFFWN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+  <p>Apabila Video tidak dapat diputar di sini. Klik tombol di bawah untuk menonton langsung di YouTube.</p>
+<a href="https://www.youtube.com/watch?v=kZlvcejgVv0" target="_blank">Tonton di YouTube</a>
+</section>
+
+<section id="tugas2" class="tugas2-post">
+  <h2>Tugas Kedua - Attribute, Entitas, dan Relasi</h2>
+  <p>
+    Pada tugas ini, kita belajar mengenai konsep <strong>Entity-Relationship Diagram (ERD)</strong>. 
+    ERD membantu memvisualisasikan data dan hubungannya, termasuk entitas, atribut, dan relasi antar entitas.
+  </p>
+
+  <div class="tugas2-cards">
+    <div class="tugas2-card">
+      <h3>Entitas</h3>
+      <p>Objek nyata atau konsep yang datanya ingin disimpan. Contoh: Mahasiswa, Dosen, Mata Kuliah.</p>
+    </div>
+
+    <div class="tugas2-card">
+      <h3>Atribut</h3>
+      <p>Sifat atau informasi yang dimiliki entitas. Contoh: NIM, Nama, Tanggal Lahir.</p>
+    </div>
+
+    <div class="tugas2-card">
+      <h3>Relasi</h3>
+      <p>Hubungan antar entitas. Contoh: Mahasiswa <em>mengambil</em> Mata Kuliah.</p>
+    </div>
+  </div>
+</section>
 
   <!-- Footer -->
   <footer>
