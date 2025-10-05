@@ -226,61 +226,50 @@ main {
 }
 
 
-/* Section Tugas 2 */
-.tugas2-post {
-  min-height: 90vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 50px 20px;
-  text-align: center;
+/* Section ERD Detail */
+.erd-detail {
+  background: #f0f4f8;  /* warna berbeda dari section lain */
+  padding: 60px 20px;
+  width: 100%;
+  text-align: left;
+  border-radius: 12px;
 }
 
-.tugas2-post h2 {
+.erd-detail .content-wrapper {
+  max-width: 1000px;  /* batasi lebar konten agar rapi */
+  margin: 0 auto;     /* center konten */
+}
+
+.erd-detail h2 {
   color: #e63946;
   font-size: 2.5rem;
-  margin-bottom: 30px;
-}
-
-.tugas2-post p {
-  max-width: 700px;
-  margin-bottom: 40px;
-  font-size: 1.1rem;
-  color: #333;
-}
-
-.tugas2-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  max-width: 1000px;
-}
-
-.tugas2-card {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  width: 300px;
   text-align: center;
-  transition: transform 0.3s;
+  margin-bottom: 40px;
 }
 
-.tugas2-card:hover {
-  transform: translateY(-8px);
-}
-
-.tugas2-card h3 {
-  color: #e63946;
+.erd-detail h3 {
+  color: #457b9d;
+  font-size: 1.5rem;
+  margin-top: 25px;
   margin-bottom: 10px;
 }
 
-.tugas2-card img {
-  max-width: 100%;
+.erd-detail p {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.erd-detail pre {
+  background: #e0e0e0;
+  padding: 15px;
   border-radius: 8px;
+  overflow-x: auto;
+  font-size: 0.95rem;
   margin-top: 10px;
+  margin-bottom: 20px;
+  color: #1d3557;
 }
 
 /* Footer */
@@ -301,7 +290,7 @@ footer {
         <li><a href="#home">Beranda</a></li>
         <li><a href="#tugas">Tugas</a></li>
         <li><a href="#dbms">Install Database</a></li>
-        <li><a href="#tugas2">ERD</a></li>
+        <li><a href="#erd">ERD</a></li>
       </ul>
     </div>
   </nav>
@@ -415,30 +404,72 @@ CREATE TABLE Mahasiswa (
 <a href="https://www.youtube.com/watch?v=kZlvcejgVv0" target="_blank">Tonton di YouTube</a>
 </section>
 
-<section id="tugas2" class="tugas2-post">
-  <h2>Tugas Kedua - Attribute, Entitas, dan Relasi</h2>
-  <p>
-    Pada tugas ini, kita belajar mengenai konsep <strong>Entity-Relationship Diagram (ERD)</strong>. 
-    ERD membantu memvisualisasikan data dan hubungannya, termasuk entitas, atribut, dan relasi antar entitas.
-  </p>
+<section id="erd" class="erd-detail">
+  <div class="content-wrapper">
+    <h2>Penjelasan Entity-Relationship Diagram (ERD)</h2>
+    
+    <h3>1. Entitas</h3>
+    <p>
+      Entitas adalah objek nyata atau konsep yang datanya ingin disimpan dalam database.
+      Contoh entitas: <strong>Mahasiswa</strong>, <strong>Dosen</strong>, <strong>Mata Kuliah</strong>.
+    </p>
 
-  <div class="tugas2-cards">
-    <div class="tugas2-card">
-      <h3>Entitas</h3>
-      <p>Objek nyata atau konsep yang datanya ingin disimpan. Contoh: Mahasiswa, Dosen, Mata Kuliah.</p>
-    </div>
+    <h3>2. Atribut</h3>
+    <p>
+      Atribut adalah informasi yang dimiliki oleh entitas.  
+      Contoh: Mahasiswa memiliki <em>NIM</em>, <em>Nama</em>, <em>Alamat</em>, <em>Tanggal Lahir</em>.
+    </p>
 
-    <div class="tugas2-card">
-      <h3>Atribut</h3>
-      <p>Sifat atau informasi yang dimiliki entitas. Contoh: NIM, Nama, Tanggal Lahir.</p>
-    </div>
+    <h3>3. Relasi</h3>
+    <p>
+      Relasi menunjukkan hubungan antar entitas.  
+      Contoh: Mahasiswa <strong>mengambil</strong> Mata Kuliah, Dosen <strong>mengajar</strong> Mata Kuliah.  
+      Relasi bisa memiliki atribut tambahan, misal <em>Nilai</em> pada relasi Mengambil.
+    </p>
 
-    <div class="tugas2-card">
-      <h3>Relasi</h3>
-      <p>Hubungan antar entitas. Contoh: Mahasiswa <em>mengambil</em> Mata Kuliah.</p>
-    </div>
+    <h3>4. Kardinalitas</h3>
+    <p>
+      Kardinalitas menjelaskan jumlah hubungan antar entitas.  
+      Contoh: 1 Mahasiswa bisa mengambil banyak Mata Kuliah (1:N),  
+      1 Dosen bisa mengajar banyak Mata Kuliah (1:N),  
+      Mata Kuliah bisa diambil banyak Mahasiswa (M:N).
+    </p>
+
+    <h3>5. Contoh Implementasi SQL</h3>
+    <pre>
+CREATE TABLE Mahasiswa (
+    NIM VARCHAR(10) PRIMARY KEY,
+    Nama VARCHAR(50),
+    Alamat VARCHAR(100),
+    TglLahir DATE
+);
+
+CREATE TABLE Dosen (
+    NIP VARCHAR(10) PRIMARY KEY,
+    Nama VARCHAR(50),
+    Departemen VARCHAR(50)
+);
+
+CREATE TABLE MataKuliah (
+    KodeMK VARCHAR(10) PRIMARY KEY,
+    NamaMK VARCHAR(50),
+    SKS INT,
+    NIP_Dosen VARCHAR(10),
+    FOREIGN KEY (NIP_Dosen) REFERENCES Dosen(NIP)
+);
+
+CREATE TABLE Mengambil (
+    NIM VARCHAR(10),
+    KodeMK VARCHAR(10),
+    Nilai CHAR(2),
+    PRIMARY KEY (NIM, KodeMK),
+    FOREIGN KEY (NIM) REFERENCES Mahasiswa(NIM),
+    FOREIGN KEY (KodeMK) REFERENCES MataKuliah(KodeMK)
+);
+    </pre>
   </div>
 </section>
+
 
   <!-- Footer -->
   <footer>
