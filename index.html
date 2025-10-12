@@ -272,6 +272,111 @@ main {
   color: #1d3557;
 }
 
+/* Section relasi */
+.relasi {
+  background: #f0f4f8;  /* warna berbeda dari section lain */
+  padding: 60px 20px;
+  width: 100%;
+  min-height: 90vh;
+  text-align: left;
+  border-radius: 12px;
+}
+
+.relasi .content-wrapper {
+  max-width: 1000px;  /* batasi lebar konten agar rapi */
+  margin: 0 auto;     /* center konten */
+}
+
+.relasi h2 {
+  color: #e63946;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.relasi h3 {
+  color: #457b9d;
+  font-size: 1.5rem;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.relasi p {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.relasi pre {
+  background: #e0e0e0;
+  padding: 15px;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 0.95rem;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: #1d3557;
+}
+
+/* Section Key dan Relasi */
+.key-relation {
+  background: #ffffff;
+  padding: 60px 20px;
+  width: 100%;
+  text-align: left;
+  border-radius: 12px;
+}
+
+.key-relation .content-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.key-relation h2 {
+  color: #1d3557;
+  font-size: 2.3rem;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.key-relation h3 {
+  color: #457b9d;
+  font-size: 1.5rem;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.key-relation p {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.key-relation ul {
+  background: #f4f6f8;
+  padding: 15px 25px;
+  border-radius: 10px;
+  list-style: disc;
+  margin-bottom: 25px;
+}
+
+.key-relation li {
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.key-relation pre {
+  background: #f1f1f1;
+  padding: 15px;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 0.95rem;
+  color: #1d3557;
+  margin-bottom: 25px;
+}
+
 /* Footer */
 footer {
   text-align: center;
@@ -291,6 +396,8 @@ footer {
         <li><a href="#tugas">Tugas</a></li>
         <li><a href="#dbms">Install Database</a></li>
         <li><a href="#erd">ERD</a></li>
+        <li><a href="#key-relation">Key</a></li>
+        <li><a href="#relasi">Relation</a></li>
       </ul>
     </div>
   </nav>
@@ -470,6 +577,84 @@ CREATE TABLE Mengambil (
   </div>
 </section>
 
+<section id="key-relation" class="key-relation">
+  <div class="content-wrapper">
+    <h2>Primary Key, Foreign Key, Candidate Key</h2>
+
+    <h3>1) Apa itu Primary Key, Foreign Key, dan Candidate Key?</h3>
+    <p>
+      Dalam perancangan basis data, <strong>key</strong> berfungsi untuk memastikan keunikan data dan hubungan antar tabel.
+    </p>
+
+    <h3>• Primary Key (Kunci Utama)</h3>
+    <p>
+      Primary Key adalah atribut yang secara unik mengidentifikasi setiap baris (record) dalam tabel. 
+      Tidak boleh bernilai <em>null</em> dan tidak boleh duplikat.
+    </p>
+    <ul>
+      <li>NIM pada tabel <strong>Mahasiswa</strong></li>
+      <li>NIP pada tabel <strong>Dosen</strong></li>
+      <li>KodeMK pada tabel <strong>MataKuliah</strong></li>
+      <li>ID_Pesanan pada tabel <strong>Penjualan</strong></li>
+      <li>ID_Karyawan pada tabel <strong>Karyawan</strong></li>
+    </ul>
+
+    <h3>• Foreign Key (Kunci Tamu)</h3>
+    <p>
+      Foreign Key digunakan untuk menghubungkan satu tabel dengan tabel lain. 
+      Atribut ini merupakan kunci utama dari tabel lain yang menjadi referensinya.
+    </p>
+    <ul>
+      <li>NIP_Dosen pada tabel <strong>MataKuliah</strong> (mengacu ke Dosen)</li>
+      <li>NIM pada tabel <strong>Mengambil</strong> (mengacu ke Mahasiswa)</li>
+      <li>KodeMK pada tabel <strong>Mengambil</strong> (mengacu ke MataKuliah)</li>
+      <li>ID_Pelanggan pada tabel <strong>Penjualan</strong> (mengacu ke Pelanggan)</li>
+      <li>ID_Karyawan pada tabel <strong>Absensi</strong> (mengacu ke Karyawan)</li>
+    </ul>
+
+    <h3>• Candidate Key (Kunci Kandidat)</h3>
+    <p>
+      Candidate Key adalah atribut atau kombinasi atribut yang berpotensi menjadi Primary Key karena bersifat unik. 
+      Dari beberapa Candidate Key, satu akan dipilih sebagai Primary Key.
+    </p>
+    <ul>
+      <li>NIM dan Email pada tabel <strong>Mahasiswa</strong></li>
+      <li>NIP dan NomorHP pada tabel <strong>Dosen</strong></li>
+      <li>KodeMK dan NamaMK pada tabel <strong>MataKuliah</strong></li>
+      <li>ID_Pesanan dan NomorNota pada tabel <strong>Penjualan</strong></li>
+      <li>ID_Barang dan Barcode pada tabel <strong>Inventori</strong></li>
+    </ul>
+  </div>
+</section>
+
+<section id="relasi" class="relasi">
+  <div class="content-wrapper">
+    <h2>Penjelasan Relation Pada ERD</h2>
+    <h3>2️) Apa itu Relasi pada ERD?</h3>
+    <p>
+      Relasi adalah penghubung antar entitas dalam sistem. Relasi dapat menggambarkan bagaimana dua atau lebih entitas saling berhubungan.
+      Terdapat tiga jenis utama relasi:
+    </p>
+    <ul>
+      <li><strong>One to One (1:1)</strong> → Satu entitas hanya berhubungan dengan satu entitas lain.</li>
+      <li><strong>One to Many (1:N)</strong> → Satu entitas berhubungan dengan banyak entitas lain.</li>
+      <li><strong>Many to Many (M:N)</strong> → Banyak entitas dari satu tabel berhubungan dengan banyak entitas dari tabel lain.</li>
+    </ul>
+
+    <h3>Kenapa Many to Many Tidak Baik Digunakan Langsung?</h3>
+    <p>
+      Relasi Many-to-Many tidak direkomendasikan langsung dalam database relasional karena sulit dikelola dan tidak efisien saat di-query.  
+      Solusinya adalah membuat <strong>tabel penghubung (junction table)</strong> agar relasi menjadi dua relasi One-to-Many.
+    </p>
+
+    <pre>
+Contoh:
+Mahasiswa (NIM, Nama)
+MataKuliah (KodeMK, NamaMK)
+Mengambil (NIM, KodeMK, Nilai)
+    </pre>
+  </div>
+</section>
 
   <!-- Footer -->
   <footer>
