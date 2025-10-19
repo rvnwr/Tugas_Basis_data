@@ -275,9 +275,9 @@ main {
 /* Section relasi */
 .relasi {
   background: #f0f4f8;  /* warna berbeda dari section lain */
-  padding: 60px 20px;
+  padding: 100px 20px;
   width: 100%;
-  min-height: 90vh;
+  min-height:100vh;
   text-align: left;
   border-radius: 12px;
 }
@@ -317,6 +317,62 @@ main {
   margin-top: 10px;
   margin-bottom: 20px;
   color: #1d3557;
+}
+
+/* Section normal */
+.normal {
+  background: #f0f4f8;  /* warna berbeda dari section lain */
+  padding: 100px 20px;
+  width: 100%;
+  min-height:90vh;
+  text-align: left;
+  border-radius: 12px;
+}
+
+.normal .content-wrapper {
+  max-width: 1000px;  /* batasi lebar konten agar rapi */
+  margin: 0 auto;     /* center konten */
+}
+
+.normal h2 {
+  color: #e63946;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.normal h3 {
+  color: #457b9d;
+  font-size: 1.5rem;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.normal p {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.normal pre {
+  background: #e0e0e0;
+  padding: 15px;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 0.95rem;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: #1d3557;
+}
+.normal ul {
+        margin-left: 20px;
+    }
+
+.contoh {
+    background: #e8f4ff;
+    padding: 10px;
+    border-left: 5px solid #0077cc;
 }
 
 /* Section Key dan Relasi */
@@ -377,6 +433,31 @@ main {
   margin-bottom: 25px;
 }
 
+/* Section dbms */
+.intersection {
+  background: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.intersection h2 {
+  color: #e63946;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.intersection p {
+  max-width: 700px;
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+  color: #333;
+}
+
 /* Footer */
 footer {
   text-align: center;
@@ -398,6 +479,8 @@ footer {
         <li><a href="#erd">ERD</a></li>
         <li><a href="#key-relation">Key</a></li>
         <li><a href="#relasi">Relation</a></li>
+        <li><a href="#intersection">Kasus Intersection</a></li>
+        <li><a href="#normal">Normalisasi</a></li>
       </ul>
     </div>
   </nav>
@@ -654,6 +737,47 @@ MataKuliah (KodeMK, NamaMK)
 Mengambil (NIM, KodeMK, Nilai)
     </pre>
   </div>
+</section>
+
+<section id="intersection" class="intersection">
+  <h2>ERD Tentang Intersection</h2>
+   <p>
+    Pada bagian ini, akan dijelaskan tentang 5 kasus 5 kasus intersection
+  </p>
+
+  <div style="max-width:800px; width:100%; aspect-ratio:16/9;">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/exq1Bqspa_k?si=GMEr_jRZ3y-AO2k9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+  <p>Apabila Video tidak dapat diputar di sini. Klik tombol di bawah untuk menonton langsung di YouTube.</p>
+<a href="https://youtu.be/exq1Bqspa_k?si=wclcUcgQ1Iudf9rr" target="_blank">Tonton di YouTube</a>
+</section>
+
+<section id="normal" class="normal">
+    <h2>Apa itu Normalisasi?</h2>
+    <p>
+        Normalisasi adalah proses mengatur data dalam database agar tidak terjadi redundansi (pengulangan data)
+        dan memastikan integritas data terjaga. Dalam pembuatan ERD, normalisasi membantu agar setiap tabel memiliki
+        struktur yang efisien dan mudah diubah di masa depan.
+    </p>
+
+    <h2>Tahapan Normalisasi</h2>
+    <ul>
+        <li><b>1NF (First Normal Form)</b> – Setiap kolom hanya berisi nilai tunggal.</li>
+        <li><b>2NF (Second Normal Form)</b> – Sudah memenuhi 1NF dan semua atribut bergantung penuh pada primary key.</li>
+        <li><b>3NF (Third Normal Form)</b> – Sudah memenuhi 2NF dan tidak ada ketergantungan antar atribut non-key.</li>
+    </ul>
+
+    <div class="contoh">
+        <h3>Contoh Sederhana:</h3>
+        <p><b>Sebelum Normalisasi:</b><br>
+        Tabel Mahasiswa (NIM, Nama, KodeMK, NamaMK, Dosen)</p>
+        <p><b>Setelah Normalisasi:</b></p>
+        <ul>
+            <li>Tabel Mahasiswa (NIM, Nama)</li>
+            <li>Tabel MataKuliah (KodeMK, NamaMK, Dosen)</li>
+            <li>Tabel KRS (NIM, KodeMK)</li>
+        </ul>
+    </div>
 </section>
 
   <!-- Footer -->
